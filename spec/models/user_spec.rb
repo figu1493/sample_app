@@ -57,6 +57,7 @@ describe User do
         @user.should be_valid
       end      
     end
+   
   end
  describe "when email address is already taken" do
     before do
