@@ -41,7 +41,6 @@ describe User do
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
-
   it { should be_valid }
   it { should_not be_admin }
 
@@ -81,16 +80,16 @@ describe User do
         @user.should be_valid
       end      
     end
-    # mixed case exercises 6.31 to lowercase all mixed case emails. I made a mistake and it didn't work. Come back to it later to fix!
-    #describe "email address with mixed case" do
-    #let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
+    
+    describe "email address with mixed case" do
+      let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
 
-    #it "should be saved as all lower-case" do
-      #@user.email = mixed_case_email
-      #@user.save
-     # @user.reload.email.should == mixed_case_email.downcase
-    #end
-    # and exercises
+      it "should be saved as all lower-case" do
+        @user.email = mixed_case_email
+        @user.save
+        @user.reload.email.should == mixed_case_email.downcase
+      end
+    end
   end
 
   describe "when email address is already taken" do

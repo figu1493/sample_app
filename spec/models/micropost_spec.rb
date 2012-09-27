@@ -11,7 +11,6 @@ describe Micropost do
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
   its(:user) { should == user }
-
   it { should be_valid }
 
   describe "accessible attributes" do
